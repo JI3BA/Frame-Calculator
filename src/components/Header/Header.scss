@@ -1,0 +1,22 @@
+.header{
+    max-width: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+    &__title{
+        font-size: 32px;
+        font-weight: 700;
+        color: #000000;
+        padding: 20px 0;
+    }
+ 
+}
+
+.wrapper{
+    max-width: 1440px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
