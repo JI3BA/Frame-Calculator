@@ -7,9 +7,12 @@
     }
 
     &__text{
-        background-color: #47eded;
-        padding: 6px 20px;
-        border-bottom: 1px solid #37b0b0;
+        font-size: 18px;
+        font-weight: 500;
+        background-color: #5247ed;
+        padding: 8px 30px;
+        border-bottom: 1px solid #5247ed;
+        cursor: pointer;
 
         &::after{
             content: "";
@@ -31,6 +34,8 @@
     &__options{
         position: absolute;
         width: 100%;
+        font-size: 16px;
+        font-weight: 600;
     }
   }
   
@@ -38,17 +43,19 @@
     margin: 0;
     padding: 0;
     text-align: center;
+    z-index: 1;
   }
   
   li {
     list-style-type: none;
     padding: 6px 20px;
-    background: #47eded;
-    border-bottom: 1px solid #37b0b0;
+    background: #5247ed;
+    border-bottom: 1px solid #5247ed;
     cursor: pointer;
-  }
-  
-  li:hover {
-    background-color: #32a6a6;
-    color: #ffffff;
+    z-index: 2;
+
+    &:hover {
+      background-color: #5247ed;
+      color: #ffffff;
+    }
   }

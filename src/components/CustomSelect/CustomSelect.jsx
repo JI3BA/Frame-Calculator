@@ -5,30 +5,28 @@ const CustomSelect = (props) => {
     const [selectText, setSelectText] = useState('')
     const [showOptionList, setShowOptionList] = useState(false)
 
-    
+    useEffect(() => {
+        document.addEventListener("mousedown", handleClickOutside);
+        setSelectText('Выбор')
+        
+        return document.removeEventListener("mousedown", handleClickOutside);
+    })
 
     const handleClickOutside = (e) => {
         if (!e.target.classList.contains("custom-select__option") &&
           !e.target.classList.contains("selected__text")){
           setShowOptionList(false)
         }
-      };
+    };
     
     const handleListDisplay = () => {
         setShowOptionList(prev => !prev)
-      };
+    };
     
     const handleOptionClick = (e) => {
         setSelectText(e.target.getAttribute("data-name"))
         setShowOptionList(false)
     };
-
-    useEffect(() => {
-        document.addEventListener("mousedown", handleClickOutside);
-        setSelectText('Choose Option')
-
-        return () => document.removeEventListener("mousedown", handleClickOutside);
-    }, [])
 
     return(
         <div className="custom-select">

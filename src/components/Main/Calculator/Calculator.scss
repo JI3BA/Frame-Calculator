@@ -1,0 +1,11 @@
+.calculator{
+    &__contaier{
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__text{
+        font-size: 24px;
+        font-weight: 600;
+    }
+}
