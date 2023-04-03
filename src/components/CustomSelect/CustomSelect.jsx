@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
+import '../CustomSelect/CustomSelect.scss'
 
-const CustomSelect = () => {
+const CustomSelect = (props) => {
     const [selectText, setSelectText] = useState('')
     const [showOptionList, setShowOptionList] = useState(false)
-    const [optionsList, setOptionsList] = useState([])
 
     
 
@@ -15,7 +15,7 @@ const CustomSelect = () => {
       };
     
     const handleListDisplay = () => {
-        setShowOptionList(!showOptionList)
+        setShowOptionList(prev => !prev)
       };
     
     const handleOptionClick = (e) => {
@@ -23,25 +23,29 @@ const CustomSelect = () => {
         setShowOptionList(false)
     };
 
+    useEffect(() => {
+        document.addEventListener("mousedown", handleClickOutside);
+        setSelectText('Choose Option')
+
+        return () => document.removeEventListener("mousedown", handleClickOutside);
+    }, [])
+
     return(
         <div className="custom-select">
             <div className="custom-select__container">
-                <div
-                className={showOptionList ? "custom-select__text active" : "custom-select__text"}
-                onClick={handleListDisplay()}
-                >
+                <div className={showOptionList ? "custom-select__text active" : "custom-select__text"} onClick={handleListDisplay}>
                     {selectText}
                 </div>
 
                 {showOptionList && (
                     <ul className="custom-select__options">
-                        {optionsList.map(option => {
+                        {props.optionsList.map((option, index) => {
                         return (
                             <li
                             className="custom-select__option"
                             data-name={option.name}
-                            key={option.id}
-                            onClick={handleOptionClick()}
+                            key={index}
+                            onClick={handleOptionClick}
                             >
                             {option.name}
                             </li>
