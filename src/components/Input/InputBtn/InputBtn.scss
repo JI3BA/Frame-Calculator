@@ -1,0 +1,29 @@
+.input{
+    &__btn{
+        padding: 3px 19px;
+        color: #5247ed;
+        background: transparent;
+        border: transparent;
+        cursor: pointer;
+        font-size: 22px;
+        font-weight: 600;
+        transition: background .5s, color .5s;
+
+        &:hover{
+            color: #ffffff;
+            background: #5247ed;
+        }
+
+        &--plus{
+            position: absolute;
+            top: 0;
+            right: 0;
+        }
+
+        &--minus{
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+    }
+}

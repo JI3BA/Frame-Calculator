@@ -2,12 +2,11 @@ import React, { useEffect, useState } from "react";
 import '../CustomSelect/CustomSelect.scss'
 
 const CustomSelect = (props) => {
-    const [selectText, setSelectText] = useState('')
+    const [selectText, setSelectText] = useState('Выбор')
     const [showOptionList, setShowOptionList] = useState(false)
 
     useEffect(() => {
         document.addEventListener("mousedown", handleClickOutside);
-        setSelectText('Выбор')
         
         return document.removeEventListener("mousedown", handleClickOutside);
     })
