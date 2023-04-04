@@ -1,4 +1,7 @@
-th{
-    padding: 10px;
-    border: 2px solid #5247ed;
+.table{
+    & th{
+        max-width: 500px;
+        border: 1px solid #5247ed;
+        padding: 5px 10px;
+    }
 }
