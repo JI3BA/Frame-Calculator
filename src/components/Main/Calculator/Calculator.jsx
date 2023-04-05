@@ -20,11 +20,11 @@ const Calculator = () => {
                     <CustomSelect optionsList={data.filter(item => item.type.includes('pipe'))}/>
                 </div>
                 <div className="calculator__data calculator__config">
-                    <p className="calculator__text">Длина (шаг 0,2)м</p>
+                    <p className="calculator__text">Длина (м) - шаг 0,2</p>
                     <Input configData={config.find(item => item.name.includes('Длина'))}/>
                 </div>
                 <div className="calculator__data calculator__config">
-                    <p className="calculator__text">Ширина (шаг 0,2)м</p>
+                    <p className="calculator__text">Ширина (м) - шаг 0,2</p>
                     <Input configData={config.find(item => item.name.includes('Ширина'))}/>
                 </div>
                 <div className="calculator__data calculator__config">

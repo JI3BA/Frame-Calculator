@@ -1,14 +1,14 @@
 import React from "react";
 import Calculator from "./Calculator/Calculator";
 import '../Main/Main.scss'
-import Table from "./Table/Table";
+import Result from "./Result/Result";
 
 const Main = () => {
     return(
         <div className="main">
             <div className="main__container wrapper">
                 <Calculator/>
-                <Table />
+                <Result />
             </div>
         </div>
     )
