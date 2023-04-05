@@ -4,6 +4,7 @@ import Input from "../../Input/Input";
 import '../Calculator/Calculator.scss'
 import data from '../../../data/data.json'
 import config from '../../../data/config.json'
+import Button from "../../Button/Button";
 
 const Calculator = () => {
     
@@ -30,6 +31,9 @@ const Calculator = () => {
                 <div className="calculator__data calculator__config">
                     <p className="calculator__text">Прочность</p>
                     <CustomSelect optionsList={config.filter(item => item.type.includes('frame'))}/>
+                </div>
+                <div className="calculator__button">
+                    <Button>Calculate</Button>
                 </div>
             </div>
         </>

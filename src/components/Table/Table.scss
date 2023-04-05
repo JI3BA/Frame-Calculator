@@ -3,5 +3,9 @@
         max-width: 500px;
         border: 1px solid #5247ed;
         padding: 5px 10px;
+
+        &:nth-child(1){
+            min-width: 300px;
+        }
     }
 }

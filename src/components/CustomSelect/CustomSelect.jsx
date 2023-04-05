@@ -4,7 +4,7 @@ import '../CustomSelect/CustomSelect.scss'
 const CustomSelect = (props) => {
     const [selectText, setSelectText] = useState('Выбор')
     const [showOptionList, setShowOptionList] = useState(false)
-
+    
     useEffect(() => {
         document.addEventListener("mousedown", handleClickOutside);
         

@@ -1,0 +1,23 @@
+.button{
+    padding: 5px 10px;
+    border: 1px solid #5247ed;
+    font-size: 22px;
+    font-weight: 500;
+    background: #5247ed;
+    color: #ffffff;
+    box-shadow: 5px 5px 5px transparent;
+    transform: scale(1);
+    cursor: pointer;
+    transition: background .5s, color .5s, transform .5s, box-shadow .5s;
+
+    &:hover{
+        background: #ffffff;
+        color: #5247ed;
+        box-shadow: 3px 3px 5px #5247ed;
+    }
+
+    &:active{
+        transform: scale(0.95);
+    }
+
+}
