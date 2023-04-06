@@ -3,7 +3,14 @@ import { DataContext } from "./DataContext";
 
 export const DataProvider = ({ children }) => {
     const [data,setData] = useState([])
-    
 
-    return <DataContext.Provider value={{data}}>{children}</DataContext.Provider>
+    const setDataCalculator = (dataCalc) => {
+        setData([...data, dataCalc])
+    }
+
+    const getSquare = (data) => {
+        setSquare(data.reduce((acc,item) => acc * item))
+    }
+
+    return <DataContext.Provider value={{data, setDataCalculator, getSquare}}>{children}</DataContext.Provider>
 }

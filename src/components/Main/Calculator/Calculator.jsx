@@ -1,13 +1,17 @@
-import React from "react";
+import React, { useState } from "react";
 import CustomSelect from "../../CustomSelect/CustomSelect";
 import Input from "../../Input/Input";
-import '../Calculator/Calculator.scss'
-import data from '../../../data/data.json'
-import config from '../../../data/config.json'
+import '../Calculator/Calculator.scss';
+import data from '../../../data/data.json';
+import config from '../../../data/config.json';
 import Button from "../../Button/Button";
 
+import { useData } from  "../../../hooks/useData";
+
+
 const Calculator = () => {
-    
+    const { data } = useData()
+
     
     return(
         <>
@@ -22,18 +26,18 @@ const Calculator = () => {
                 </div>
                 <div className="calculator__data calculator__config">
                     <p className="calculator__text">Длина (м) - шаг 0,2</p>
-                    <Input configData={config.find(item => item.name.includes('Длина'))}/>
+                    <Input getData={config.find(item => item.name.includes('Длина'))}/>
                 </div>
                 <div className="calculator__data calculator__config">
                     <p className="calculator__text">Ширина (м) - шаг 0,2</p>
-                    <Input configData={config.find(item => item.name.includes('Ширина'))}/>
+                    <Input getData={config.find(item => item.name.includes('Ширина'))}/>
                 </div>
                 <div className="calculator__data calculator__config">
                     <p className="calculator__text">Прочность</p>
                     <CustomSelect optionsList={config.filter(item => item.type.includes('frame'))}/>
                 </div>
                 <div className="calculator__button">
-                    <Button>Calculate</Button>
+                    <Button onClick={getCalcualte}>Calculate</Button>
                 </div>
             </div>
         </>

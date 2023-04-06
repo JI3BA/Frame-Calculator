@@ -1,5 +1,7 @@
 import { createContext } from 'react';
 
 export const DataContext = createContext({
-    data: []
+    data: [],
+    setData: () => {},
+    getSquare: () => {},
 })
