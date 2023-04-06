@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from "react";
 import '../CustomSelect/CustomSelect.scss'
+import { useData } from "../../hooks/useData";
 
-const CustomSelect = (props) => {
+const CustomSelect = ({ optionsList }) => {
+    const { tableData, setDataTable } = useData()
     const [selectText, setSelectText] = useState('Выбор')
     const [showOptionList, setShowOptionList] = useState(false)
     
@@ -10,6 +12,10 @@ const CustomSelect = (props) => {
         
         return document.removeEventListener("mousedown", handleClickOutside);
     })
+
+    useEffect((e) => {
+        console.log(tableData)
+    }, [selectText])
 
     const handleClickOutside = (e) => {
         if (!e.target.classList.contains("custom-select__option") &&
@@ -25,6 +31,7 @@ const CustomSelect = (props) => {
     const handleOptionClick = (e) => {
         setSelectText(e.target.getAttribute("data-name"))
         setShowOptionList(false)
+        setDataTable(optionsList.find(option => option.name === e.target.getAttribute("data-name")))
     };
 
     return(
@@ -36,7 +43,7 @@ const CustomSelect = (props) => {
 
                 {showOptionList && (
                     <ul className="custom-select__options">
-                        {props.optionsList.map((option, index) => {
+                        {optionsList.map((option, index) => {
                         return (
                             <li
                             className="custom-select__option"

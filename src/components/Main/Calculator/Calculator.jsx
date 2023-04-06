@@ -11,7 +11,6 @@ import { useData } from  "../../../hooks/useData";
 
 const Calculator = () => {
     const { dataset, getSquare } = useData()
-
     
     return(
         <>
