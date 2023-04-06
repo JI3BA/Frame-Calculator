@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import CustomSelect from "../../CustomSelect/CustomSelect";
 import Input from "../../Input/Input";
 import '../Calculator/Calculator.scss';
@@ -10,7 +10,7 @@ import { useData } from  "../../../hooks/useData";
 
 
 const Calculator = () => {
-    const { data } = useData()
+    const { dataset, getSquare } = useData()
 
     
     return(
@@ -37,7 +37,7 @@ const Calculator = () => {
                     <CustomSelect optionsList={config.filter(item => item.type.includes('frame'))}/>
                 </div>
                 <div className="calculator__button">
-                    <Button onClick={getCalcualte}>Calculate</Button>
+                    <Button onClick={() => getSquare(dataset)}>Calculate</Button>
                 </div>
             </div>
         </>

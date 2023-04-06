@@ -2,15 +2,16 @@ import React, { useState } from "react";
 import { DataContext } from "./DataContext";
 
 export const DataProvider = ({ children }) => {
-    const [data,setData] = useState([])
+    const [dataset, setDataset] = useState([])
+    const [square, setSquare] = useState(0)
 
     const setDataCalculator = (dataCalc) => {
-        setData([...data, dataCalc])
+        setDataset([...dataset, dataCalc])
     }
 
-    const getSquare = (data) => {
-        setSquare(data.reduce((acc,item) => acc * item))
+    const getSquare = (dataset) => {
+        setSquare(dataset.reduce((acc,item) => acc * item))
     }
 
-    return <DataContext.Provider value={{data, setDataCalculator, getSquare}}>{children}</DataContext.Provider>
+    return <DataContext.Provider value={{dataset, square, setDataCalculator, getSquare}}>{children}</DataContext.Provider>
 }
