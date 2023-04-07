@@ -8,7 +8,7 @@ const Result = () => {
 
     return(
         <div className="result">
-            <p className="result__text">Площадь изделия: {Number(square).toFixed(1)}м²</p>
+            <p className="result__text">Площадь изделия: {Number(square).toFixed(2)}м²</p>
             <p className="result__text">Размер ячейки: </p>
             <Table />
         </div>

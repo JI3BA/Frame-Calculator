@@ -1,16 +1,23 @@
-import React from "react";
+import React, { useEffect } from "react";
 import CustomSelect from "../../CustomSelect/CustomSelect";
 import Input from "../../Input/Input";
 import '../Calculator/Calculator.scss';
 import data from '../../../data/data.json';
 import config from '../../../data/config.json';
 import Button from "../../Button/Button";
-
 import { useData } from  "../../../hooks/useData";
 
 
 const Calculator = () => {
-    const { dataset, getSquare } = useData()
+    const { tableData, dataset, getSquare } = useData()
+
+    const onClickCalculate = () => {
+        getSquare(dataset)
+    }
+
+    useEffect(() => {
+        console.log(tableData)
+    }, [tableData])
     
     return(
         <>
@@ -36,7 +43,7 @@ const Calculator = () => {
                     <CustomSelect optionsList={config.filter(item => item.type.includes('frame'))}/>
                 </div>
                 <div className="calculator__button">
-                    <Button onClick={() => getSquare(dataset)}>Calculate</Button>
+                    <Button onClick={onClickCalculate}>Calculate</Button>
                 </div>
             </div>
         </>

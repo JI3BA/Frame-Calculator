@@ -3,7 +3,7 @@ import '../CustomSelect/CustomSelect.scss'
 import { useData } from "../../hooks/useData";
 
 const CustomSelect = ({ optionsList }) => {
-    const { tableData, setDataTable } = useData()
+    const { setDataTable } = useData()
     const [selectText, setSelectText] = useState('Выбор')
     const [showOptionList, setShowOptionList] = useState(false)
     
@@ -12,10 +12,6 @@ const CustomSelect = ({ optionsList }) => {
         
         return document.removeEventListener("mousedown", handleClickOutside);
     })
-
-    useEffect((e) => {
-        console.log(tableData)
-    }, [selectText])
 
     const handleClickOutside = (e) => {
         if (!e.target.classList.contains("custom-select__option") &&
